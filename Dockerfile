@@ -1,4 +1,5 @@
 FROM node:18-alpine
+RUN apk add --no-cache tini
 RUN apk add clamav && \
     sed -i 's/^#Foreground .*$/Foreground yes/g' /etc/clamav/clamd.conf && \
     echo "TCPAddr 0.0.0.0" >> /etc/clamav/clamd.conf && \
