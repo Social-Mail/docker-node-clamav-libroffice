@@ -34,10 +34,10 @@ const sleep = (ms,signal) => {
 const spawnPromise = (path, args) => new Promise((resolve, reject) => {
     const cd = spawn(path, args);
     cd.stdout.on("data", (data) => {
-        console.log("clamd:" + data);
+        console.log(`${path}: ${data}`);
     });
     cd.stderr.on("data", (data) => {
-        console.log("clamd:" + data);
+        console.error(`${path}: ${data}`);
     });
     cd.on("close", resolve);
 });
