@@ -1,6 +1,6 @@
 FROM node:18-alpine
 RUN apk add --no-cache tini
-RUN apk add clamav && \
+RUN apk add 7zip clamav && \
     sed -i 's/^#Foreground .*$/Foreground yes/g' /etc/clamav/clamd.conf && \
     echo "TCPAddr 0.0.0.0" >> /etc/clamav/clamd.conf && \
     echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
