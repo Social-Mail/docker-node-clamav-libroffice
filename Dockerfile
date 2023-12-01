@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20.10-alpine
 RUN apk add --no-cache tini
 RUN apk add 7zip clamav && \
     sed -i 's/^#Foreground .*$/Foreground yes/g' /etc/clamav/clamd.conf && \
