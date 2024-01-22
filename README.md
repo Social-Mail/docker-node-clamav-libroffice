@@ -1,4 +1,4 @@
-# docker-node-clamav
+# docker-node-clamav-libroffice
 This is a simple Docker Container that combines node-alpine with clamav
 
 clamD and freshClamD are not started automatically. This is useful when you want to use node-clamd module.
