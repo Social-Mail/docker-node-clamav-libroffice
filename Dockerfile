@@ -30,6 +30,12 @@ RUN apk add clamav && \
     echo "TCPSocket 3310" >> /etc/clamav/clamd.conf && \
     sed -i 's/^Foreground .*$/Foreground true/g' /etc/clamav/freshclam.conf
 
+RUN mkdir -p /ffmpeg
+WORKDIR /ffmpeg
+RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && \
+    tar xvf ./ffmpeg-release-amd64-static.tar.xz --one-top-level=ffmpeg2 --strip-components 1 && \
+    mv /ffmpeg/ffmpeg2 /ffmpeg/ffmpeg
+
 RUN freshclam && \
     chown clamav:clamav /var/lib/clamav/*.cvd && \ 
     mkdir /var/run/clamav && \
