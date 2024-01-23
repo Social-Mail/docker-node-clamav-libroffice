@@ -33,8 +33,7 @@ RUN apk add clamav && \
 RUN mkdir -p /ffmpeg/
 WORKDIR /ffmpeg
 RUN wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz && \
-    tar xvf ./ffmpeg-release-amd64-static.tar.xz --one-top-level=ffmpeg2 --strip-components 1 && \
-    mv /ffmpeg/ffmpeg2 /ffmpeg/ffmpeg
+    tar xvf ./ffmpeg-release-amd64-static.tar.xz --strip-components 1
 
 RUN freshclam && \
     chown clamav:clamav /var/lib/clamav/*.cvd && \ 
