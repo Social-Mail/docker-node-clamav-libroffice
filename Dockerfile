@@ -13,7 +13,7 @@ RUN apk --no-cache add bash libreoffice util-linux \
     font-droid-nonlatin font-droid ttf-dejavu ttf-freefont ttf-liberation && \
     rm -rf /var/cache/apk/*
 
-RUN apk add default-jre libreoffice-java-common
+RUN apk add openjdk8-jre
 
 # Install Microsoft Core Fonts
 RUN apk --no-cache add msttcorefonts-installer fontconfig && \
