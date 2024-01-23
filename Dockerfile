@@ -22,6 +22,7 @@ RUN apk --no-cache add msttcorefonts-installer fontconfig && \
     rm -rf /var/cache/apk/*
 
 RUN apk add 7zip
+RUN apk add poppler-utils
 
 RUN apk add clamav && \
     sed -i 's/^#Foreground .*$/Foreground yes/g' /etc/clamav/clamd.conf && \
